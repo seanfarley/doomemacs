@@ -116,6 +116,8 @@ modified."
 ;;
 ;;; Commands
 
+;; REVIEW waiting on an upstream doom fix; there's no pr or issue but it's on
+;; Henrik's radar
 ;;;###autoload
 (defun +magit/quit (&optional kill-buffer)
   "Bury the current magit buffer.
@@ -126,12 +128,13 @@ kill all magit buffers for this repo."
   (interactive "P")
   (let ((topdir (magit-toplevel)))
     (funcall magit-bury-buffer-function kill-buffer)
-    (or (cl-find-if (lambda (win)
-                      (with-selected-window win
-                        (and (derived-mode-p 'magit-mode)
-                             (equal magit--default-directory topdir))))
-                    (window-list))
-        (+magit/quit-all))))
+    (if-let (window (cl-find-if (lambda (win)
+                                  (with-selected-window win
+                                    (and (derived-mode-p 'magit-mode)
+                                         (equal magit--default-directory topdir))))
+                                (window-list)))
+        (select-window window)
+      (+magit/quit-all))))
 
 ;;;###autoload
 (defun +magit/quit-all ()
