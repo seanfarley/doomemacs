@@ -45,6 +45,7 @@
 (package! ox-clip :pin "a549cc8e1747beb6b7e567ffac27e31ba45cb8e8")
 (package! toc-org :pin "6d3ae0fc47ce79b1ea06cabe21a3c596395409cd")
 (package! org-cliplink :pin "13e0940b65d22bec34e2de4bc8cba1412a7abfbc")
+(package! org-transclusion :pin "151f6f806f11c24ac7f260bd2f468372bf4adc9a")
 
 ;; TODO Adjust when this is added to GNU ELPA
 (when (modulep! +contacts)

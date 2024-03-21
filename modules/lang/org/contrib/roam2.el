@@ -205,3 +205,11 @@ sections seems to ignore the detachment."
 ;; detected), we can safely chain `org-roam-protocol' to it.
 (use-package! org-roam-protocol
   :after org-protocol)
+
+;; TODO this actually doesn't depend on roam
+(use-package! org-transclusion
+  :after org
+  :init
+  (map! :leader
+   (:prefix-map ("n" . "notes")
+    :desc "Org Transclusion Mode" "T" #'org-transclusion-mode)))
