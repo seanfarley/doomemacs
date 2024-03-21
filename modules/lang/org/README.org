@@ -68,7 +68,8 @@ https://www.mfoot.com/blog/2015/11/22/literate-emacs-configuration-with-org-mode
   Enable [[doom-package:org-noter]] integration. Keeps notes in sync with a
   document. Requires [[doom-module::tools pdf]], [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Document-View.html][DocView]], or [[https://github.com/wasamasa/nov.el][nov.el]] to be enabled.
 - +pandoc ::
-  Enable pandoc integration into the Org exporter.
+  Enable pandoc integration into the Org exporter. Also adds org-web-tools which
+  is a helpful way to use pandoc to import html into org.
 - +passwords ::
   Enable [[doom-package:org-passwords]] integration.
 - +pomodoro ::

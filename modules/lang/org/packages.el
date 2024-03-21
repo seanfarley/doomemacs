@@ -158,7 +158,8 @@
 
 ;;; Export
 (when (modulep! +pandoc)
-  (package! ox-pandoc :pin "399d787b6e2124bd782615338b845c3724a47718"))
+  (package! ox-pandoc :pin "399d787b6e2124bd782615338b845c3724a47718")
+  (package! org-web-tools :pin "7a6498f442fc7f29504745649948635c7165d847"))
 (when (modulep! +hugo)
   (package! ox-hugo
     :recipe (:host github :repo "kaushalmodi/ox-hugo" :nonrecursive t)
