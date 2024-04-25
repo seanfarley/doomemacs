@@ -15,3 +15,7 @@
 
 (package! parsebib :pin "ace9df707108b17759c004c7387655277122d4c1")
 (package! citeproc :pin "44f90cb296766e03fffc28b7892521ab0e8709f1")
+
+;; for finding and importing references
+(package! biblio :pin "ee52f6cda82ea6fbc3b400e7b12132595cc0374c")
+(package! biblio-gbooks :pin "991f214b8af23f168462a0006cf4d6216fbd7371")

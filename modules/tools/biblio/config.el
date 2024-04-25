@@ -105,3 +105,27 @@
   :defer t
   :config
   (add-to-list 'ivy-re-builders-alist '(ivy-bibtex . ivy--regex-plus)))
+
+(use-package! biblio
+  :config
+  ;; biblio tries to be fancy and detect the completion function but hardcodes a
+  ;; call to ido as a fallback, so we instead just override biblio
+  (defadvice! +biblio-read-default ()
+    :override #'biblio--completing-read-function
+    #'completing-read-default)
+
+  (after! embark
+    (defvar +biblio-embark-become-map
+      (let ((map (make-sparse-keymap)))
+        (define-key map (kbd "x") 'biblio-arxiv-lookup)
+        (define-key map (kbd "c") 'biblio-crossref-lookup)
+        (define-key map (kbd "i") 'biblio-ieee-lookup)
+        (define-key map (kbd "h") 'biblio-hal-lookup)
+        (define-key map (kbd "s") 'biblio-dissemin-lookup)
+        (define-key map (kbd "b") 'biblio-dblp-lookup)
+        (define-key map (kbd "g") 'biblio-gbooks-lookup)
+        map)
+      "Citar Embark become keymap for biblio lookup.")
+
+    ;; tell embark about the keymap
+    (add-to-list 'embark-become-keymaps #'biblio-embark-become-map)))
