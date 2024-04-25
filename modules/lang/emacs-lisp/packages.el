@@ -11,6 +11,7 @@
 (package! overseer :pin "7fdcf1a6fba6b1569a09c1666b4e51bcde266ed9")
 (package! elisp-def :pin "1ad4baccbf3d0d13e7607d332ae6bc60a5dd7360")
 (package! elisp-demos :pin "1a108d1c5011f9ced58be2ca98bea1fbd4130a2f")
+(package! form-feed-st :pin "f91c8daf35b7588e0aa24c8716c8cfd8ff0067c8")
 (when (and (modulep! :checkers syntax)
            (not (modulep! :checkers syntax +flymake)))
   (package! flycheck-package :pin "75efa098cf17dc14c363e2ca9b68afdac7766b5b")

@@ -260,6 +260,12 @@ See `+emacs-lisp-non-package-mode' for details.")
         "s" #'buttercup-run-at-point))
 
 
+(use-package! form-feed-st
+  :hook (doom-first-buffer . global-form-feed-st-mode)
+  :config
+  (set-face-attribute 'form-feed-st-line nil :inherit font-lock-comment-face))
+
+
 ;;
 ;;; Project modes
 
